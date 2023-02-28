@@ -1,0 +1,10 @@
+easydict==1.9
+numpy==1.19.5
+scipy==1.5.4
+tqdm==4.64.0
+PyYAML==6.0
+filterpy==1.4.5
+opencv_python==4.2.0.32
+nuscenes-devkit==1.1.9
+numba==0.53.1
+pandas==1.1.5

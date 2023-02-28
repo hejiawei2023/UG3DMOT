@@ -1,0 +1,27 @@
+dataset: 'NuScenes'
+tracker_name: 'PA3DMOT'
+process: 1
+
+# dataset info
+split: 'val'  # val test
+det_name: 'cp'
+dataset_root: "./data/nuscenes"
+detections_root: "./data/nuscenes"
+save_path: './mot_results/nuscenes'
+tracking_type: 'bus,car,trailer,truck,pedestrian,bicycle,motorcycle'
+# ----------------threshold------------
+input_score: 0.01
+init_score: 0.01
+update_score: 0.01
+nms: True
+nms_thres: 0.1
+# --------------age threshold-------------
+miss_age: 4
+min_hits: 2
+
+# --------------- matching threshold -------------------
+dimensions: [0, 1, 2]   # x, y, z, l, w, h
+asso: "js_dis"   #  m_dis js_dis
+matching_mechanism: "common"      # cov_guide common
+distance_threshold: {'car': 14, 'pedestrian': 7, 'bicycle': 7, 'motorcycle': 16, 'bus': 18, 'trailer': 11, 'truck': 14}
+covariance_id: 2
