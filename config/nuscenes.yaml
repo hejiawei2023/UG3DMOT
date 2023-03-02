@@ -1,5 +1,5 @@
 dataset: 'NuScenes'
-tracker_name: 'PA3DMOT'
+tracker_name: 'UG3DMOT'
 process: 1
 
 # dataset info
@@ -21,7 +21,7 @@ min_hits: 2
 
 # --------------- matching threshold -------------------
 dimensions: [0, 1, 2]   # x, y, z, l, w, h
-asso: "js_dis"   #  m_dis js_dis
+asso: "js_dis"   #  kl_dis js_dis
 matching_mechanism: "common"      # cov_guide common
 distance_threshold: {'car': 14, 'pedestrian': 7, 'bicycle': 7, 'motorcycle': 16, 'bus': 18, 'trailer': 11, 'truck': 14}
 covariance_id: 2

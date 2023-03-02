@@ -155,8 +155,4 @@ def read_pose(path):
             pose_per_seq[id] = pose
     return pose_per_seq
 
-if __name__ == '__main__':
-    path = 'H:/数据集/traking/training/label_02/0000.txt'
-    labels,a = read_tracking_label(path)
-    print(a)
 

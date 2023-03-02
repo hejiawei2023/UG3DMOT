@@ -1,9 +1,9 @@
-# from tracking.trajectory import Trajectory
+# Author: hejw
 import numpy as np
 
 from tracking.cov_data import Covariance
 from tracking.kalman_filter_3d import Trajectory_3D
-from utils.cost import js_distance, m_distance
+from utils.cost import js_distance, kl_distance
 
 
 class Tracker:
@@ -98,9 +98,8 @@ class Tracker:
 
                 if self.config.asso == "js_dis":
                     dist_matrix[i, j] = js_distance(det_i, trk_j, self.config.dimensions)
-
-                if self.config.asso == "m_dis":
-                    dist_matrix[i, j] = m_distance(det_i, trk_j, self.config.dimensions)
+                if self.config.asso == "kl_dis":
+                    dist_matrix[i, j] = kl_distance(det_i, trk_j, self.config.dimensions)
 
         if self.config.matching_mechanism == 'cov_guide':
             dist_matrix = dist_matrix * cov_factor

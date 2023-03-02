@@ -6,5 +6,4 @@ class TrajectoryState:
         self.P_update = None
         self.score = None
         self.dets = None
-        self.innovation_matrix = None
 

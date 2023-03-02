@@ -43,7 +43,6 @@ class Trajectory_3D(object):
         trajectory.x_update = self.kf.x
         trajectory.P_predict = self.kf.P
         trajectory.P_update = self.kf.P
-        trajectory.innovation_matrix = self.compute_innovation_matrix()
         trajectory.score = score
         trajectory.dets = self.init_bbox
         self.trajectory[self.init_time] = trajectory
@@ -74,7 +73,7 @@ class Trajectory_3D(object):
             else:
                 self.kf.x[3] -= np.pi * 2
 
-        # 更新状态
+        # update state
         self.kf.update(bbox3D)
 
         if self.kf.x[3] >= np.pi: self.kf.x[3] -= np.pi * 2  # make the theta still in the rage
@@ -105,7 +104,6 @@ class Trajectory_3D(object):
         #     trajectory.P_update = self.kf.P
         #     trajectory.score = self.trajectory[time_stamp-1].score
 
-        trajectory.innovation_matrix = self.compute_innovation_matrix()
         self.trajectory[time_stamp] = trajectory
 
     def filtering(self):
@@ -113,7 +111,7 @@ class Trajectory_3D(object):
         total_score = 0
         for key in self.trajectory.keys():
             track_state = self.trajectory[key]
-            if track_state.score is not None:  # 这就是匹配上
+            if track_state.score is not None:
                 detected_num += 1
                 total_score += track_state.score
 
@@ -124,11 +122,6 @@ class Trajectory_3D(object):
             track_state = self.trajectory[key]
             track_state.score = score
 
-    def compute_innovation_matrix(self):
-        """ compute the innovation matrix for association with mahalonobis distance
-        """
-        innovation_matirx = np.matmul(np.matmul(self.kf.H, self.kf.P), self.kf.H.T) + self.kf.R
-        return innovation_matirx
 
 
 
