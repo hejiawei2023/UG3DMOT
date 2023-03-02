@@ -1,4 +1,4 @@
-# PA3DMOT
+# UG3DMOT
 
 ## Abstract
 In the existing literature, most 3D multi-object tracking algorithms based on the tracking-by-detection framework employed deterministic tracks and detections for similarity calculation in the data association stage. Namely, the inherent uncertainties existing in tracks and detections are overlooked. In this work, we discard the commonly used deterministic tracks and deterministic detections for data association, instead, we propose to model tracks and detections as random vectors in which uncertainties are taken into account. Then, based on the Jensen-Shannon divergence, the similarity between two multidimensional distributions, i.e. track and detection, is evaluated for data association purposes. Lastly, the level of track uncertainty is incorporated in our cost function design to guide the data association process. We achieve state-of-the-art results across several MOT tasks on the KITTI and NuScenes datasets.
