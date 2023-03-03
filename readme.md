@@ -85,7 +85,7 @@ bash preparedata/nuscenes/nu_convert_detection.sh  <path to detection results>/d
 We use the Centerpoint detector. If you use other detectors, you need to re-estimate its uncertainty using the method  from [here](https://arxiv.org/abs/2001.05673) and modify the measurement covariance in [cov_data](./tracking/cov_data.py)
 ## Installation
 1. Ubuntu 20.04 and python 3.6
-2. Clone the github repository ```git clone https://github.com/wangxiyang2022/DeepFusionMOT```
+2. Clone the github repository ```git clone https://github.com/hejiawei2023/UG3DMOT.git```
 3. Create and activate a conda environment
 4. Installation package ``` pip install -r requirement```
 ## Quick start
