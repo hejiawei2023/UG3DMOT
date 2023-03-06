@@ -96,7 +96,7 @@ to your own path.
 
 ## Acknowledgement
 
-The processing code for the  Kitti dataset comes from [here](https://github.com/hailanyi/3D-Multi-Object-Tracker)
+The processing code for the  KITTI dataset comes from [here](https://github.com/hailanyi/3D-Multi-Object-Tracker)
 
 The processing code for the  NuScenes dataset comes from  [here](https://github.com/ImmortalTracker/ImmortalTracker)
 
